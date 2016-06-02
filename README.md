@@ -1,6 +1,6 @@
 # Gravi-k
 
-![Gravi-k](assets/screenshot-gravi-k.png)
+![Gravi-k](assets/screenshot-gravi-k.jpg)
 
 **Gravi-K** is a [Grav](http://getgrav.org) theme based on [Knascss](http://knacss.com/)
 This is a base theme for starting your site, but also meant to be customized.
