@@ -1,0 +1,29 @@
+<div id="menu-e" class="menu">
+
+  <div class="container">
+   
+    <button class="menu-toggle">
+      <i class="ion-android-menu"></i>
+    </button>
+    
+    <div class="menu-logo">
+      <a href="{{base_url}}/">
+       {% if theme_config.logo %}
+        <img class="pts" src="{{ theme_url }}/images/{{theme_config.logo}}" alt="logo">
+        {% else %}
+        <span>{{site.title}}</span>
+        {% endif %}
+        </a>
+    </div>
+    
+     <div class="nav">     
+      
+      <nav class="nav-links" role="navigation">
+        {% include 'partials/navigation.html.twig' %}
+      </nav>
+      
+    </div>
+
+  <div id="shade"></div>
+</div>
+</div> 

@@ -1,0 +1,84 @@
+{% set text = page.header.text %}
+{% set team = page.header.team %}
+
+
+ <section class="team {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %}
+  {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+  <div class="container">
+  
+  {% if text.heading_display %}
+    {% include 'partials/text-heading.html.twig' %}
+  {% endif %}
+  
+  <div class="grid-{{ page.header.team.col3? '3':'4'}}-splus-2-tplus-1 team-list mtl ptl">
+     {% for item in team.list %}
+      <div class="team-items mbl {{ text.text_center? 'center'}}">
+      <div class="team-wrap pam">
+       {% if item.image %}
+        <div class="team-items__img mas">         
+          <img {{ team.round? 'class="rounded"' : '' }} src="{{page.url}}/{{ item.image }}?cropResize=220,220" alt="">
+        </div>
+        {% endif %}
+        
+        {% if item.name or item.job %}
+        <div class="team-items__contact txtcenter">
+        {% if item.name %} 
+          <p class="h5-like team-items__name">
+          {{item.name}}
+          </p>
+        {% endif %}
+        
+        {% if item.job %}
+          <p class="h6-like team-items__job mts">
+          {{item.job}}
+          </p>
+        {% endif %}
+        </div>
+        
+        {% endif %}      
+        
+        
+        <hr>
+        
+        <div class="team-items__contact  txtcenter">
+          
+          {% if item.contact_email %} 
+          <a href="{{item.contact_email}}"><i class="fa fa-envelope fw"></i></a>
+          {% endif %}
+          
+          {% if item.contact_twitter %}
+          <a href="{{item.contact_twitter}}"><i class="fa fa-twitter fw"></i></a>
+          {% endif %}
+          
+          {% if item.contact_facebook %}
+          <a href="{{item.contact_facebook}}"><i class="fa fa-facebook fw"></i></a>
+          {% endif %}
+          
+          {% if item.contact_googleplus %}
+          <a href="{{item.contact_googleplus}}"><i class="fa fa-google-plus fw"></i></a>
+          {% endif %}
+          
+          {% if item.contact_linkedin %}
+          <a href="{{item.contact_linkedin}}"><i class="fa fa-linkedin fw"></i></a>
+          {% endif %}
+          
+          {% if item.contact_pinterest %}
+          <a href="{{item.contact_pinterest}}"><i class="fa fa-pinterest fw"></i></a>
+          {% endif %}
+            
+          
+        </div>
+        </div>
+      </div>
+      
+      {% endfor %}      
+    </div>
+ 
+  </div>
+
+  {% if page.header.posContent == 'after' %}
+  {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>

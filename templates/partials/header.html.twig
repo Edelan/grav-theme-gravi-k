@@ -1,0 +1,17 @@
+
+ <div class="container grid-2 resume tiny-hidden small-hidden">
+  <div class="lead">{{theme_config.showheader.resume}}</div>
+  <div class="social">
+    <ul class="social-link">
+     {% for item in theme_config.social.links %}
+     {% if item.url %}
+      <li>
+        <a href="{{item.url}}">
+          <i class="fa fa-{{item.name}}"></i>
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

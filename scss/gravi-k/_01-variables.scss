@@ -1,0 +1,234 @@
+//  Table of Contents:
+// 1. Global
+// 2. Colors
+// 3. Fonts
+// 4. Breakpoint
+// 5. Menu
+// 6. Forms
+// 7. Buttons
+// 8. Other
+
+
+// 1. Global
+// ===============================================
+
+
+// Container sizes & spacing
+$container-padding: 8px !default;
+$container-gutter: 30px !default;
+$container-max-width: 1600px !default;
+// Paddings & margins
+$container-pad-v: 0.5rem !default; 
+$container-pad-h: 0.5rem !default;
+$section-pad: 8rem 0 !default;
+
+
+// From Knacss
+
+$gutter: 2rem !default; // gutter value for grid layouts. Unit can be: %, px, em, rem
+$small-value: 1rem !default;
+$medium-value: 2rem !default;
+$large-value: 4rem !default;
+
+// 1. COLORS
+// ================================================
+
+// theme colors
+// possible color 
+// #ea8825 - #8600c8 - #008ed6 - #00ab66 - #6b798f - #0196a7 - #e5c41a
+
+$color-test: (
+orange: #ea8825,
+purple: #8600c8,  
+indigo: #3f51b5,
+blue: #0196a7,
+green: #00ab66,
+brown: #795548,
+yellow: #e5c41a,
+red: #de2525
+);
+
+$color-theme: #1bb3e9 !default;//#0160b2
+
+// --Base
+
+$black: #000 !default;
+$white: #fff !default;
+
+// --Grayscale
+
+$gray-darker: lighten($black, 13.5%) !default; // #222
+$gray-dark: lighten($black, 20%) !default; // #333
+$gray-dark1: lighten($black, 25%) !default;
+$gray: lighten($black, 33.5%) !default; // #555
+$gray-light: lighten($black, 46.7%) !default; // #777
+$gray-light1: lighten($black, 57%) !default; // #919191
+$gray-lighter: lighten($black, 70%) !default; // #b3b3b3
+$gray-lighter1: lighten($black, 80%) !default; // #ccc
+$gray-lighter2: lighten($black, 85%) !default; // d9d9d9
+$gray-lighterplus: lighten($black, 93.5%) !default; // eee
+$gray-lighterplus1: lighten($black, 94.5%) !default; // f1f1f1
+$gray-lighterplus2: lighten($black, 97.5%) !default; // f9f9f9
+
+
+// --Background
+$bg-theme-color: $color-theme !default;
+$section-bg-gray: darken($white, 1.8%) !default; // #fafafa
+
+// --Opacity
+
+$shadow-1-opacity: 0.2 !default;
+$shadow-2-opacity: 0.14 !default;
+$shadow-3-opacity: 0.12 !default;
+
+// --Social
+
+$map-social-colors:(
+envelope: $color-theme,
+facebook: #3b5998,
+flickr: #ff0084,
+google-plus: #dc4e41,
+instagram: #3f729b,
+linkedin: #0077b5,
+pinterest: #bd081c,
+skype: #0078ca,
+slideshare: #0077b5,
+tumblr: #35465c,
+twitter: #4099ff,
+vimeo: #1ab7ea,
+youtube: #cd201f,
+  
+) !default;
+
+// 3. FONTS
+// ================================================
+
+// --Font-family
+
+// ----General
+$font-basic-sans: Roboto, Verdana, Arial, sans-serif !default;
+$font-basic-sans-alt: 'Open Sans', Verdana, Arial, sans-serif !default;
+
+// ----Titles
+$font-basic-sans-title: 'Roboto Condensed', Verdana, Arial, sans-serif !default;
+$font-basic-sans-title-alt: 'Open Sans Condensed', Verdana, Arial, sans-serif !default;
+
+// --Font-size
+
+// **margin and padding use rem**
+$html-font-size: 10px !default;
+
+$header-base16-small: (
+    'h1, .h1-like': 1.5,
+    'h2, .h2-like': 1.25,
+    'h3, .h3-like': 1.187,
+    'h4, .h4-like': 1.125,
+    'h5, .h5-like': 1.0625,
+    'h6, .h6-like': 1,
+);
+
+$header-base16-medium: (
+    'h1, .h1-like': 2.571,
+    'h2, .h2-like': 2.143,
+    'h3, .h3-like': 1.714,
+    'h4, .h4-like': 1.285,
+    'h5, .h5-like': 1.0625,
+    'h6, .h6-like': 1,
+);
+
+// --Font-weight
+
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+
+
+// 4. Breakpoint
+// ==============================================
+
+// --Define the screen
+
+$screen-phone: 480px;
+$screen-tablet: 768px;
+$screen-desktop: 960px;// à revoir
+$screen-desktop-plus: 1024px;
+$screen-lg-desktop: 1200px;// à revoir 
+
+// --Container size
+
+$map-container-size: (
+1 : 320px,
+2 : 480px,
+3 : 1440px,
+);
+
+// --Font-responsive
+
+$map-breakpoint-font-size: (
+  0: 1.4,
+  480: 1.5,  
+  768: 1.6,
+  1600: 1.7  
+);
+
+// --Specific font-responsive
+$showcase-breakpoint-font-size: (
+  0: 3,
+  480: 3.5,  
+  768: 4,
+  1280: 4.5,
+  1600: 5
+);
+
+
+// 5. Menu
+// =================================================
+
+$menu-min-height: 48px !default;
+$menu-line-height: $menu-min-height !default;
+$menu-padding: 20px 15px !default;
+$menu-mini-padding: 12px 15px !default;
+
+// --Colors
+$menu-bg-color: $white !default;
+$menu-bg-color-hover: darken($white, 20%) !default;
+
+$menu-link-color: $color-theme !default;
+$menu-visited-color: $color-theme !default;
+
+$menu-hover-color: $color-theme !default;
+$menu-active-color: $color-theme !default;
+
+// 6. Forms
+// ================================================
+
+// --Text Inputs + Textarea
+
+$input-height: 3rem !default;
+$input-border-color: $gray-lighterplus !default;
+$input-border-width: 1px !default;
+$input-border-style: solid !default;
+$input-background: $section-bg-gray !default;
+$input-font-size: 1em !default;
+$input-margin: 0 0 1em 0 !default;
+$input-padding: 0.6rem !default;
+$input-transition: all .3s !default;
+$label-font-size: .8rem !default;
+$label-margin: 0 0 0.5em 0 !default;
+$placeholder-text-color: lighten($input-border-color, 20%) !default;
+
+
+// 7. Buttons
+// ================================================
+
+$button-pad: 0.85em 1em !default;
+$button-marg: 0 !default;
+$button-fil: solid !default;
+$button-bg-color: $color-theme !default;
+$button-bg-color-hover: scale-color($button-bg-color, $lightness: -20%) !default;
+$button-color: $white !default;
+$button-radius: 0 !default;
+$button-font-weight: 500 !default;
+
+// 8. Other
+// ================================================

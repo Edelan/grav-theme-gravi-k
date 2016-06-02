@@ -1,0 +1,52 @@
+---
+title: 'Home 2'
+body_classes: modular
+heading:
+    display: false
+    bread: false
+    bgcol_theme: true
+content:
+    order:
+        dir: asc
+        by: folder
+    items: '@self.modular'
+form:
+    title: home-contact
+    name: form-contact
+    action: /home-2
+    fields:
+        -
+            name: name
+            label: name
+            placeholder: 'Enter your name'
+            type: text
+            validate:
+                required: true
+        -
+            name: email
+            label: Email
+            placeholder: 'Enter your email'
+            type: email
+            validate:
+                required: true
+    buttons:
+        -
+            type: submit
+            value: 'Subscribe Now'
+    process:
+        -
+            email:
+                from: '{{ config.plugins.email.from }}'
+                to: ['{{ config.plugins.email.to }}', '{{ form.value.email }}']
+                subject: '[Home-2 Gravi-k Subscribe] {{ form.value.name|e }}'
+                body: '{% include ''forms/data.txt.twig'' %}'
+        -
+            save:
+                fileprefix: contact-Home-gravi-k
+                dateformat: Ymd-His-u
+                extension: txt
+                body: '{% include ''forms/data.txt.twig'' %}'
+        -
+            display: /thank-you-subscribe
+---
+

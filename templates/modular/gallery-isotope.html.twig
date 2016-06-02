@@ -1,0 +1,28 @@
+{% set text = page.header.text %}
+{% set gallery = page.header.gallery %}
+ <section class="gallery {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %}
+  {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+  <div class="container">
+   
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+   
+    <div class="grid-{{ gallery.col3? '3' : '4'}} gallery-items">
+    
+     {% for item in page.media.images %} 
+     
+      <div class="mbm">
+         {{item.lightbox().html }}
+      </div>
+     
+      {% endfor %}
+      
+    </div>
+  </div>
+  {% if page.header.posContent == 'after' %}
+  {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>

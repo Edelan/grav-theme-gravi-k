@@ -1,0 +1,119 @@
+{% set text = page.header.text %}
+{% set list = page.header.list %}
+
+{% set ls = page.header.ls %}
+ 
+{% set slide_id = 'ls-' ~ random_string(10) %}
+
+<section class="testimonial {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %} {% include 'partials/content-before.html.twig' %} {% endif %}
+  <div class="container">
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+
+    <div class="testimonial-items">
+      {% if page.header.type %}
+      <ul id="{{slide_id}}" class="slide">
+
+        {% for item in list %}
+        <li class="pam">
+          <p class="h4-like">{{item.title}}</p>
+          <p>
+            <blockquote>
+              {{item.comment}}
+            </blockquote>
+          </p>
+          <p class="mts">
+            {% if item.name %}
+            <span>
+              <strong>{{item.name}}</strong>
+            </span>
+          {% endif %}
+          {% if item.function %}
+            <span>&nbsp;-&nbsp;{{item.function}}</span>
+          {% endif %}
+          {% if item.date %}
+            <span>
+              <small>
+                <i>&nbsp;-&nbsp;{{item.date}}</i>
+              </small>
+            </span>
+          {% endif %}
+          </p>
+        </li>
+        {% endfor %}
+
+      </ul>
+      {% else %}
+      <div class="grid-2-splus-1-tplus-1 fullText">
+        {% for item in list %}
+        <div class="pam mbm">
+          <p class="h4-like">
+            {{item.title}}
+          </p>
+          <p>
+            <blockquote>
+              {{item.comment}}
+            </blockquote>
+          </p>
+          <p class="mts">
+          {% if item.name %}
+            <span>
+              <strong>{{item.name}}</strong>
+            </span>
+          {% endif %}
+          {% if item.function %}
+            <span>&nbsp;-&nbsp;{{item.function}}</span>
+          {% endif %}
+          {% if item.date %}
+            <span>
+              <small>
+                <i>&nbsp;-&nbsp;{{item.date}}</i>
+              </small>
+            </span>
+          {% endif %}
+          </p>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  {% if page.header.posContent == 'after' %} {% include 'partials/content-after.html.twig' %} {% endif %}
+</section>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#{{ slide_id }}").lightSlider({
+        item: {{ ls.item|default(1) }},
+        slideMove: {{ ls.slideMove|default(3) }},
+        mode: 'slide',
+        cssEasing: '{{ ls.cssEasing|default('ease') }}',
+        easing: '{{ ls.easing|default('') }}',
+        speed: {{ ls.speed|default(1000) }},
+        auto: {{ ls.auto|default('false') }},
+        loop: {{ ls.loop|default('false') }},
+        pause: {{ ls.pause|default(2000) }},
+        pauseOnHover: {{ ls.pauseOnHover|default(false) }},        
+        pager: {{ ls.pager|default('true') }},
+        responsive: [          
+          
+          {
+            breakpoint: 1024,
+            settings: {
+              item:1,
+              slideMove: 1,
+            }
+            
+          }
+        ]
+        
+
+    });
+  });
+</script>

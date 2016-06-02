@@ -1,0 +1,257 @@
+/* Text inputs */
+
+input:not([type]),
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=url],
+input[type=time],
+input[type=date],
+input[type=datetime],
+input[type=datetime-local],
+input[type=tel],
+input[type=number],
+input[type=search],
+textarea {
+  // General Styles
+  background-color: $input-background;
+  border-width: $input-border-width;
+  border-style: $input-border-style;
+  border-left-color: $color-theme;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  outline: none;
+  width: 100%;
+  font-size: $input-font-size;
+  color: $gray;
+  margin: $input-margin;
+  padding: $input-padding;
+  box-shadow: none;
+  transition: $input-transition;
+  &:focus {
+    border-bottom-color: $color-theme;
+    border-left-color: transparent;
+  }
+}
+
+select {
+  background-color: $input-background;
+  color: $gray;
+  border-color: $color-theme;
+  border-style: $input-border-style;
+  border-width: $input-border-width;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin: $input-margin;
+  outline: none;
+  & ~ label {
+    vertical-align: baseline;
+    margin: $input-margin;
+  }
+}
+
+input[placeholder],
+textarea[placeholder] {
+  font-weight: 300;
+}
+
+label {
+  display: inline-block;
+  margin: $label-margin;
+  text-transform: uppercase;
+}
+
+button {
+  @include buttonBase();
+  @include buttonColorStyle();
+  //min-width: 320px;
+  margin-top: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+form {}
+
+.required {
+  color: $color-theme;
+}
+
+.form-fields {}
+
+.button {}
+
+.bg-gray {
+  input:not([type]),
+  input[type=text],
+  input[type=password],
+  input[type=email],
+  input[type=url],
+  input[type=time],
+  input[type=date],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=tel],
+  input[type=number],
+  input[type=search],
+  textarea,
+  select {
+    // General Styles
+    background-color: $white;
+  }
+}
+
+.ui-datepicker {
+  background-color: $white;
+}
+
+.ui-datepicker-header {
+  position: relative;
+  margin-top: 16px;
+  padding: 8px;
+  .ui-icon {
+    display: none;
+  }
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    position: absolute;
+    &.ui-state-disabled {
+      background-color: $white;
+    }
+  }
+  .ui-datepicker-prev {
+    left: 8px;
+    &:before {
+      content: '\f053';
+      font-family: 'Fontawesome';
+      cursor: pointer;
+    }
+  }
+  .ui-datepicker-next {
+    right: 8px;
+    &:after {
+      content: '\f054';
+      font-family: 'Fontawesome';
+      cursor: pointer;
+    }
+  }
+  .ui-datepicker-title {
+    text-align: center;
+  }
+}
+// aside forms
+.contact-aside, .contact-form{
+  padding-right: 3em;
+  
+}
+.contact-form.center{
+  padding-right: 0;
+}
+@media screen and (max-width: $screen-tablet){
+  .contact-aside, .contact-form {
+    margin-top: 20px;
+    padding-right: 0;
+  }
+}
+
+// subscribe form
+
+.subscribe{
+  form{
+    text-align: center;
+  }
+  
+  label{
+    display: none;
+  }
+  div, input{
+    display: inline-block;
+  }
+  input, button{
+    margin: $button-marg;
+    padding: $button-pad;
+    border: 1px solid $color-theme;
+    font-size: 1em;
+    line-height: 1em;
+    font-weight: 400;
+    vertical-align: baseline;
+    margin-bottom: 8px;
+    
+  }
+  input{
+    min-width: 250px;
+    &:focus{      
+      border-left-color: $color-theme;
+    }
+  }
+  button{
+    margin-left: 3px;
+    
+  }
+  input[placeholder]{
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 731px){
+  .subscribe{
+    button, input{
+      display: block;
+    }
+    input:focus{      
+      border-left-color: $color-theme;
+    }
+  }
+  
+}
+.contact-form.subscribe{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// table
+.ui-datepicker-calendar {
+  width: auto;
+  th,
+  td {
+    border-style: solid;
+    border-color: $color-theme;
+    text-align: center;
+  }
+  td:hover {
+    background-color: $gray-lighterplus;
+  }
+}
+
+.ui-state-default {
+  text-decoration: none;
+}
+
+.ui-datepicker-today {
+  background-color: $color-theme !important;
+  .ui-state-default{
+    color: $white;
+  }
+}
+
+.ui-state-highlight {
+  color: $white;
+}
+
+.ui-state-disabled {
+  background-color: $gray-lighter;
+}
+
+.ui-datepicker-other-month {
+  background-color: $white;
+}
+
+// Page Thank you
+
+.thankyou{
+  i{
+    color: $color-theme;
+  }
+}

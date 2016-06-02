@@ -1,0 +1,31 @@
+{% set open = theme_config.openday %}
+
+<div class="company-openday mbm">
+  <p class="h3-like mbs prs">
+  {% if open.title %}
+  
+  {{open.title}}
+  
+  {% else %}
+  
+  Working hours
+  
+  {% endif %}</p>
+  {% if open.some_text %}
+  
+  <div class="resume w90">{{open.some_text  | markdown}}</div>
+  
+  {% endif %}
+  
+  {% if open.resume %}
+  <table class="hours">
+    {% for key, value in open.resume %}
+    <tr>
+      <td>{{key}} </td>
+      <td>{{value}}</td>
+    </tr>     
+    
+    {% endfor %}
+  </table>
+  {% endif %}
+</div>

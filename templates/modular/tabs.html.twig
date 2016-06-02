@@ -1,0 +1,28 @@
+{% set text = page.header.text %}
+{% set tabs = page.header.tabspanel %}
+
+  
+  <section class="tabs-panel {{ page.header.bgcolor? '': 'bg-gray'}}">
+
+  {% if page.header.posContent == 'before' %}
+    {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+
+  <div class="container">
+  {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+      
+    {% if tabs.title_type %}
+     
+      {% include 'partials/tabs-title-text.html.twig' %}
+    {% else %}
+     
+      {% include 'partials/tabs-title-icon.html.twig' %}
+    {% endif %}
+  </div>
+  
+  {% if page.header.posContent == 'after' %}
+    {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>

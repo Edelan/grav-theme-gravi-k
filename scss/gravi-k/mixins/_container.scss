@@ -1,0 +1,50 @@
+@mixin container-max{
+  width: $container-max-width;
+}
+
+@mixin container {
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+  margin-left: auto;
+  margin-right: auto;  
+}
+
+@mixin resp-container {
+  @each $key, $size in $map-container-size {
+    @media screen and (min-width: $size) {
+      @if ($size < 480px){
+        width: 100%;
+      }
+      @else if ($size > 1400px){
+        width: 1280px;
+      }      
+      @else if ($size > 470px){
+        //width: 960px;
+        width: 90%;
+      }
+      @else {
+      width: ($size - $container-gutter);
+      }
+    }
+  }
+} 
+
+
+
+
+
+
+
+/*@mixin resp-container{
+  @each $size in $map-screen-size {
+    @media screen and (min-width: $size){
+      @if ($size < 768px){
+        width: $size;
+      }
+      @else {
+        width: $size - $container-gutter;
+      }
+    }    
+  }
+  
+}*/

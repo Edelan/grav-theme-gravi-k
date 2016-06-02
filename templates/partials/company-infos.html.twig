@@ -1,0 +1,43 @@
+{% set infos = theme_config.infos %}
+
+<div class="company-infos mbm">  
+  <p class="h3-like mbs prs">  
+  {% if infos.title %}
+  
+  {{infos.title}}
+  
+  {% else %}
+  
+  Informations
+  
+  {% endif %}  
+  </p> 
+  {% if infos.content %}
+  
+  <p class="w90">{{infos.content}}</p>
+  {% endif %}
+  
+  {% if infos.page_dest %}
+  <ul class="social-link">
+    {% for item in infos.page_dest %}
+     
+    <li>
+      <a href="{{base_url}}{{item.url}}">
+      {% if item.name %}
+         
+        {{item.name}}
+          
+      {% else %}
+         
+        {% set title = page.find(item.url).title() %}
+        {{ title }}
+          
+      {% endif %}
+      </a>
+    </li>
+     
+    {% endfor %}
+  </ul>
+  {% endif %}
+  
+</div>

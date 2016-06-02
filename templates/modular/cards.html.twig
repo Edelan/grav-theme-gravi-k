@@ -1,0 +1,52 @@
+{% set text = page.header.text %} 
+{% set cards = page.header.cards %}
+
+
+  <section id="cards" {{ page.header.bgcolor? '': 'class="bg-gray"'}}>
+
+  {% if page.header.posContent == 'before' %}
+    {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+
+  <div class="container">
+   
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+    
+    <div class="grid-{{ page.header.cards.col? '3':'4'}}-splus-2-tplus-1">
+     {% for item in cards.list %}
+      <div class="cards-items mbl">
+      
+       {% if item.img %}
+        <div class="cards-items__img">
+          <img src="{{page.url}}/{{item.img}}" alt="">
+        </div>
+        {% endif %}
+        {% if item.subtitle %}
+        
+        <p class="h5-like cards-items__title  mt0 pvs">
+        {{item.subtitle}}
+        </p>
+        {% endif %}
+        {% if item.content %}
+        <div class="cards-items__content resume mbm prs">
+        {{item.content|markdown}}
+        </div>
+        {% endif %}
+        {% if item.link %}
+        <div class="cards-items__link">
+          <a href="{{base_url}}{{item.link}}">Read more</a>
+        </div>
+        {% endif %}
+      </div>
+      
+      {% endfor %}      
+    </div>
+
+    
+  </div>
+  {% if page.header.posContent == 'after' %}
+    {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>

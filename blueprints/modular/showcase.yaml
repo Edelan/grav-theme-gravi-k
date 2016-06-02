@@ -1,0 +1,351 @@
+title: Showcase
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/showcase
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/showcase
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        custom:
+          type: tab
+          title: Custom
+          fields:
+            section1:
+              type: section
+              title: Create your showcase
+              underline: true
+            display0:
+              type: display
+              label: 'Instruction'
+              content: 'Required plugin **LightSlider** <br>on https://getgrav.org/downloads/plugins'
+              markdown: true
+            header.choice:
+              type: toggle
+              label: Choice
+              highlight: 1
+              default: 1
+              options:
+                1: 'Text Anime'
+                0: 'Text Slider'
+              validate:
+                type: bool
+            header.backImage:
+                  label: Choose a background image
+                  type: pagemediaselect
+                  help: Please upload from the first modular page.
+            textAnime:
+              type: section
+              title: Create the text animation
+              text: 'For the settings go to the first page modular in custom tab'
+              underline: true              
+              fields:
+                header.text_anime:
+                  type: list
+                  label: Content title
+                  fields:
+                    .title:
+                      type: text
+                      label: Title
+                header.subTitle:
+                  type: textarea
+                  label: Content subtitle
+            slider:
+              type: section
+              title: Create the text slider
+              text: 'tips:'
+              underline: true
+              fields:
+                header.text_slide:
+                  type: list
+                  label: Content text
+                  fields:
+                    .slTitle:
+                      type: text
+                      label: Title
+                    .slSubTitle:
+                      type: text
+                      label: Subtitle
+                    .slContent:
+                      type: textarea
+                      label: content
+            section3:
+              type: section
+              title: Create your button
+              underline: true
+              fields:
+                header.button.text:
+                  type: text
+                  label: Text content
+                  size: medium
+                header.button.url:
+                  type: pages
+                  label: Choose your page
+                  show_all: false
+                  show_modular: true
+                  show_root: false
+                  size: medium                
+                  
+        settings:
+          type: tab
+          title: Settings
+          fields:            
+            section01:
+              type: section
+              title: Settings Text Animation
+              underline: true
+              
+              fields:                
+                header.textillate.loop:
+                  type: toggle
+                  label: Auto loop
+                  highlight: 'false'
+                  default: 'false'
+                  options:
+                    'false': No
+                    'true': Yes
+                    
+                header.textillate.dispTime:
+                  type: text
+                  size: x-small
+                  label: Time for each text between 2000 and 5000ms
+                  default: 2000
+                  validate:
+                    type: number
+                    min: 2000
+                    max: 5000
+                    
+                header.textillate.initDelay:
+                  type: text
+                  size: x-small
+                  label: Delay before starting the animation
+                  help: set the delay between each character
+                  default: 0
+                  validate:
+                    type: number
+                    min: 0
+                    
+                header.textillate.textTypeIn:
+                  type: select
+                  label: In effect
+                  size: medium
+                  options:
+                    flash: flash
+                    bounce: bounce
+                    shake: shake
+                    tada: tada
+                    swing: swing
+                    wobble: wobble
+                    pulse: pulse
+                    flip: flip
+                    flipInX: flipInX
+                    flipInY: flipInY
+                    fadeIn: fadeIn
+                    fadeInUp: fadeInUp
+                    fadeInDown: fadeInDown
+                    fadeInLeft: fadeInLeft
+                    fadeInRight: fadeInRight
+                    fadeInUpBig: fadeInUpBig
+                    fadeInDownBig: fadeInDownBig
+                    fadeInLeftBig: fadeInLeftBig
+                    fadeInRightBig: fadeInRightBig
+                    bounceIn: bounceIn
+                    bounceInDown: bounceInDown
+                    bounceInUp: bounceInUp
+                    bounceInLeft: bounceInLeft
+                    bounceInRight: bounceInRight
+                    rotateIn: rotateIn
+                    rotateInDownLeft: rotateInDownLeft
+                    rotateInDownRight: rotateInDownRight
+                    rotateInUpLeft: rotateInUpLeft
+                    rotateInUpRight: rotateInUpRight
+                    rollIn: rollIn
+                    
+                header.textillate.textModeIn:
+                  type: select
+                  label: In method
+                  size: medium
+                  options:                    
+                    shuffle: shuffle
+                    sequence: sequence
+                    reverse: reverse
+                    sync: sync
+                    
+                header.textillate.dispTimeIn:
+                  type: text
+                  size: x-small
+                  label: Delay factor between 1 and 10
+                  help: set the delay factor applied to each consecutive character
+                  default: 1.5
+                  validate:
+                    type: number
+                    min: 1
+                    max: 10
+                    
+                header.textillate.initDelayIn:
+                  type: text
+                  size: x-small
+                  label: Delay between 50 and 500
+                  help: set the delay between each character
+                  default: 50
+                  validate:
+                    type: number
+                    min: 50
+                    max: 500
+                    
+                header.textillate.textTypeOut:
+                  type: select
+                  label: Out effect 
+                  size: medium
+                  options:
+                    flash: flash
+                    bounce: bounce
+                    shake: shake
+                    tada: tada
+                    swing: swing
+                    wobble: wobble
+                    pulse: pulse
+                    flip: flip
+                    flipOutX: flipOutX
+                    flipOutY: flipOutY
+                    fadeOut: fadeOut
+                    fadeOutUp: fadeOutUp
+                    fadeOutDown: fadeOutDown
+                    fadeOutLeft: fadeOutLeft
+                    fadeOutRight: fadeOutRight
+                    fadeOutUpBig: fadeOutUpBig
+                    fadeOutDownBig: fadeOutDownBig
+                    fadeOutLeftBig: fadeOutLeftBig
+                    fadeOutRightBig: fadeOutRightBig
+                    bounceOut: bounceOut
+                    bounceOutDown: bounceOutDown
+                    bounceOutUp: bounceOutUp
+                    bounceOutLeft: bounceOutLeft
+                    bounceOutRight: bounceOutRight
+                    rotateOut: rotateOut
+                    rotateOutDownLeft: rotateOutDownLeft
+                    rotateOutDownRight: rotateOutDownRight
+                    rotateOutUpLeft: rotateOutUpLeft
+                    rotateOutUpRight: rotateOutUpRight
+                    hinge: hinge
+                    rollOut: rollOut
+                    
+                header.textillate.textModeOut:
+                  type: select
+                  label: Out method
+                  size: medium
+                  options:                    
+                    shuffle: shuffle
+                    sequence: sequence
+                    reverse: reverse
+                    sync: sync
+                    
+                header.textillate.dispTimeOut:
+                  type: text
+                  size: x-small
+                  label: Delay factor between 1 and 10
+                  help: set the delay factor applied to each consecutive character
+                  default: 1.5
+                  validate:
+                    type: number
+                    min: 1
+                    max: 10
+                    
+                header.textillate.initDelayOut:
+                  type: text
+                  size: x-small
+                  label: Delay between 50 and 500 in
+                  help: set the delay between each character
+                  default: 50
+                  validate:
+                    type: number
+                    min: 50
+                    max: 500
+                    
+            section02:
+              type: section
+              title: Settings text slider
+              underline: true
+              fields:                
+
+                header.ls.item:
+                  type: text
+                  size: x-small
+                  label: Item
+                  default: 1
+                  help: The number of slides to show at a time
+                  readonly: true
+
+                header.ls.loop:
+                  type: toggle
+                  label: Loop
+                  highlight: true
+                  default: 'false'
+                  options:
+                    'true': Enabled
+                    'false': Disabled
+                  help: Sets whether or not to loop the slides or stop at the last slide
+
+                header.ls.slideMove:
+                  type: text
+                  size: x-small
+                  label: Slide Move
+                  default: 1
+                  help: This option sets the number of slides moved at a time. The default setting is `1`
+                  readonly: true
+
+                header.ls.auto:
+                  type: toggle
+                  label: Auto
+                  highlight: true
+                  default: 'true'
+                  options:
+                    'true': Enabled
+                    'false': Disabled
+                  help: Sets whether or not automatic transitions is enabled
+
+                header.ls.pause:
+                  type: text
+                  size: x-small
+                  label: Pause
+                  default: 5000
+                  help: Sets the time (in milliseconds) between automatic transitions
+
+                header.ls.pauseOnHover:
+                  type: toggle
+                  label: Pause on Hover
+                  highlight: true
+                  default: 'false'
+                  options:
+                    'true': Enabled
+                    'false': Disabled
+                  help: Sets whether or not it should pause the transitions on hover
+
+                header.ls.speed:
+                  type: text
+                  size: x-small
+                  label: Speed
+                  default: 1000
+                  help: Sets the time (in milliseconds) of the transition between slides
+
+                header.ls.pager:
+                  type: toggle
+                  label: Pager
+                  highlight: true
+                  default: 'true'
+                  options:
+                    'true': Enabled
+                    'false': Disabled
+                  help: Toggles the pagination that appears along with the lightSlider 

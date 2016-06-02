@@ -1,0 +1,111 @@
+title: Google-map
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/google-map
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/google-map
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        custom:
+          type: tab
+          title: Custom
+          fields:
+            header.bgcolor:
+              type: toggle
+              label: Background color
+              highlight: 1
+              default: 1
+              options:
+                1: White
+                0: Gray
+              validate:
+                type: bool
+            header.posContent:
+              type: select
+              size: medium
+              label: Position of the  content
+              default: one
+              options:
+                one: Without content
+                before: Before ...
+                after: After ...
+            section1:
+              type: section
+              title: Create your Google map
+              underline: true
+            header.gmap.wide:
+              type: toggle
+              label: Display
+              highlight: 1
+              default: 1
+              options:
+                1: 'Wide'
+                0: 'Boxed'
+              validate:
+                type: bool
+            header.gmap.height:
+              type: text
+              label: height (default 500px)
+              size: x-small
+              placeholder: 500
+            header.gmap.vertical_spacing:
+              type: toggle
+              label: Vertical spacing 
+              highlight: 0
+              default: 0
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool          
+            info1:
+              type: display
+              label: Infos 
+              content: "The map works without Api Key but it is recommended to ask for a key. More informations:  https://developers.google.com/maps/ "
+            header.gmap.apikey:
+              type: text
+              label: 'Your Api Key (recommended)'
+              size: large
+            info2:
+              type: display
+              label: Infos 
+              content: "If the coordinates are different from the theme settings"
+            header.gmap.lat:
+              type: text
+              label: Latitude (optional)
+              size: medium
+              help: 'decimal degrees (e.g: 40.7127837)'              
+            header.gmap.lng:
+              type: text
+              label: Longitude (optional)
+              size: medium
+              help: 'decimal degrees (e.g: -74.00594130000002)'              
+            header.gmap.zoom:
+              type: text
+              label: Zoom
+              size: x-small
+              help: value between 1 and 18
+              validate:
+                type: number_format
+                min: 1
+                max: 18
+            header.gmap.scroll:
+              type: toggle
+              label: Autorize scrollwheel zooming on the map.
+              highlight: 'false'
+              default: 'false'
+              options:
+                'false': 'No'
+                'true': 'Yes'  

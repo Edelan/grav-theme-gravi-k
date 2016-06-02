@@ -1,0 +1,32 @@
+@mixin a-pseudo($color){
+    & {
+        color: $color;
+        &:visited {
+          @if lightness($color) < 50%{
+            color: lighten($color, 20%);
+          }
+          @else{
+            color: darken($color, 20%);
+          }          
+          
+        }
+        &:hover {
+            @if lightness($color) < 50%{
+            color: lighten($color, 20%);
+          }
+          @else{
+            color: darken($color, 20%);
+          }  
+        }
+        &:active, &:focus {
+            @if lightness($color) < 50%{
+            color: lighten($color, 20%);
+          }
+          @else{
+            color: darken($color, 20%);
+          }  
+        }
+    }
+}
+
+ 

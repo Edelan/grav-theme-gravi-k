@@ -1,0 +1,31 @@
+{% block stylesheets %} 
+  {% do assets.addCss('theme://css/knacss.min.css',100) %}
+  {% do assets.addCss('theme://css/ionicons.min.css',100) %} 
+  {% do assets.addCss('theme://css/main.min.css',10) %}  
+  {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css') %}
+  {% do assets.addCss('theme://css/animate.min.css') %}
+
+{% endblock %}
+
+{{ assets.css() }}
+ 
+{% block javascripts %} 
+  {% do assets.addJs('jquery',101) %} 
+  {% do assets.addJs('theme://js/modernizr.custom.71422.js',100) %}
+
+{# group bottom #}
+  
+    
+  {% do assets.addJs('theme://js/main.js', {group: 'bottom'}) %}
+
+  {% do assets.addJs('theme://js/jquery-accessible-tabs-aria.js', {group: 'bottom'}) %}
+
+  {% do assets.addJs('theme://js/jquery-ui.min.js', {group: 'bottom'}) %}
+ 
+  {% do assets.addJs('theme://js/jquery.lettering.js', {group: 'bottom'}) %}
+
+  {% do assets.addJs('theme://js/jquery.fittext.js', {group: 'bottom'}) %}
+
+  {% do assets.addJs('theme://js/jquery.textillate.js', {group: 'bottom'}) %}
+{% endblock %}
+{{ assets.js() }}

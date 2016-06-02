@@ -1,0 +1,58 @@
+// Font Responsive
+
+// if font-size html in %
+@mixin typoBodyRem() {
+  @each $bpoint,
+  $size in $map-breakpoint-font-size {
+    @media screen and (min-width: $bpoint +px) {      
+      font-size: ($size*10)/$html-font-size  +rem;
+    }
+  }
+}
+
+// if font-size html in px
+@mixin typoBodyPix() {
+  @each $bpoint,
+  $size in $map-breakpoint-font-size {
+    @media screen and (min-width: $bpoint +px) {
+      font-size: $size*10 +px;
+    }
+  }
+}
+
+@mixin typoFooterPix(){
+  @each $bpoint,
+  $size in $map-breakpoint-font-size {
+    @media screen and (min-width: $bpoint +px) {
+      font-size: $size*8.5 +px;
+    }
+  }
+}
+
+@mixin typoShowcase() {
+  @each $bpoint,
+  $size in $showcase-breakpoint-font-size {
+    @media screen and (min-width: $bpoint +px) {
+      font-size: $size +rem;
+    }
+  }
+}
+
+@mixin typoButton() {
+  @each $bpoint,
+  $size in $map-breakpoint-font-size {
+    @media screen and (min-width: $bpoint +px) {
+      font-size: $size*9 +px;
+      font-weight: $button-font-weight;
+    }
+  }  
+}
+
+// Headers
+
+
+@mixin typoHeaderSize($map) {
+  @each $key, $value in $map {
+  #{$key} {font-size: $value+em; }
+  }
+}

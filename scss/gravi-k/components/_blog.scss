@@ -1,0 +1,21 @@
+.blog-content{
+  display: flex;
+  flex: 0 1 100%;
+  flex-wrap: wrap;
+}
+
+.blog-content__list{
+  display: flex;
+  flex: 0 1 70%;
+}
+.blog-content__sidebar{
+  flex: 0 1 30%;
+}
+
+// Blog articles
+
+.blog-content__item {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 50%;
+}

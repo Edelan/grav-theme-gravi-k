@@ -1,0 +1,110 @@
+title: Cards
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/cards
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/cards
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        custom:
+          type: tab
+          title: Custom
+          fields:
+            header.bgcolor:
+              type: toggle
+              label: Background color
+              highlight: 1
+              default: 1
+              options:
+                1: White
+                0: Gray
+              validate:
+                type: bool
+            header.posContent:
+              type: select
+              size: medium
+              label: Position of the  content
+              default: one
+              options:
+                one: Without content
+                before: Before ...
+                after: After ...
+            section1:
+              type: section
+              title: Create your cards panel
+              underline: true
+            
+            spacer0:
+              type: spacer
+              title: 'Add specific content'
+              underline: true
+              text: 'This content is placed above cards'
+            header.text.heading_display:
+              type: toggle
+              label: Display title & text
+              highlight: 0
+              default: 0
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+            header.text.title:
+              type: text
+              label: Title if different (optional)
+            header.text.resume:
+              type: textarea
+              label: Some text (optional)
+              help: Markdown possible
+            header.text.text_center:
+              type: toggle
+              label: Title & text position
+              highlight: 0
+              default: 0
+              options:
+                0: 'Left'
+                1: 'Center'
+              validate:
+                type: bool
+            
+            header.cards.col:
+              type: toggle
+              label: Choose 3 or 4 columns
+              highlight: 1
+              default: 1
+              options:
+                1: Three
+                0: Four
+              validate:
+                type: bool
+            header.cards.list:
+              type: list              
+              label: You can create 3 or more blocks
+              fields:
+                .img:
+                  type: pagemediaselect
+                  label: Choose media 
+                .subtitle:
+                  type: text
+                  label: Subtitle
+                .content:
+                  type: textarea
+                  label: Content
+                .link:
+                  type: pages
+                  label: page link
+                  show_all: false
+                  show_modular: false
+                  show_root: false            

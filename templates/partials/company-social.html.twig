@@ -1,0 +1,38 @@
+{% set social = theme_config.social %}
+
+<div class="company-social mbs">  
+  <p class="h3-like mbs prs">  
+  {% if social.title %}
+  
+  {{social.title}}
+  
+  {% else %}
+  
+  Social Links
+  
+  {% endif %}  
+  </p> 
+  {% if social.content %}
+  
+  <p class="w90">{{social.content}}</p>
+  {% endif %}
+  
+  {% if social.links %}
+  <ul class="social-link">
+    {% for item in social.links %} {% if item.url %}
+    <li class="mbs">
+     {% if item.name == 'envelope' %}
+     <a href="mailto:{{item.url}}">
+     {% else %}
+     <a href="{{item.url}}">
+     {% endif %}
+      
+        <i class="fa fa-{{item.name}} fa-fw"  title="{{item.name}}"></i>
+      </a>
+    </li>
+    {% endif %} 
+    {% endfor %}
+  </ul>
+  {% endif %}
+  
+</div>

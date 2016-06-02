@@ -1,0 +1,29 @@
+{% set about = theme_config.about %}
+{% set social = theme_config.social %}
+
+  
+<div class="company-about mbm">
+  <p class="h3-like mbs prs">
+  {% if about.title %}
+    {{about.title}}
+  {% else %}
+    About
+  {% endif %}
+  </p>
+  
+  <div class="content {{about.img? '': 'company-logo'}}">
+  {% if about.img %}
+    <img src="{{ theme_url }}/images/{{about.img}}" alt="{{about.img}}">  
+   
+  {% elseif theme_config.logo %}
+    <img class="pts" src="{{ theme_url }}/images/{{theme_config.logo}}" alt="logo">
+    
+  {% else %}
+    <span>{{site.title}}</span>
+  {% endif %}
+  <div class="resume">
+    {{about.content|markdown}}
+  </div>   
+   
+  </div>
+</div>

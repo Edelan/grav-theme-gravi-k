@@ -1,0 +1,27 @@
+<div class="text-heading {{ text.text_center? 'txtcenter'}}">
+    
+  {% if page.header.posContent == 'before' %}
+  
+    {% if text.title %}    
+     <h2>{{text.title}}</h2>
+    {% else %}
+     <h2>{{page.header.title}}</h2>
+    {% endif %}     
+    
+  {% else %}
+    {% if text.title %}    
+     <h1>{{text.title}}</h1>
+    {% else %}
+     <h1>{{page.header.title}}</h1>
+    {% endif %}    
+    
+  {% endif %}
+      
+    {% if text.resume %}
+      <div class="resume">
+        {{text.resume|markdown}} 
+      </div>            
+    
+    {% endif %}
+        
+</div>

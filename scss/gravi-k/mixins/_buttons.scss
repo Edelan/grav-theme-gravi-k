@@ -1,0 +1,59 @@
+// button-base() mixin
+
+@mixin buttonBase {  
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: $button-radius;
+  padding: $button-pad;
+  margin: $button-marg;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include typoButton();
+}
+
+@mixin buttonColorStyle {
+  background-color: $button-bg-color;
+  color: $button-color;
+  &:hover,
+  &:focus {
+    background-color: $button-bg-color-hover;
+    color: $button-color;
+  }
+}
+
+@mixin colorSocialIconFa {
+  @each $key, $value in $map-social-colors {
+    &.fa-#{$key} {
+      color: $value;
+    }
+  }
+}
+@mixin bgColorSocialIconFa {
+  @each $key, $value in $map-social-colors {
+    &.fa-#{$key} {
+      background-color: $value;
+    }
+  }
+}
+@mixin hoverColorSocialIconFa {
+  @each $key, $value in $map-social-colors {
+    &:hover .fa-#{$key} {
+      color: $value;
+    }
+  }
+}
+@mixin hoverBgColorSocialIconFa {
+  @each $key, $value in $map-social-colors {
+    &:hover .fa-#{$key} {
+      background-color: $value;
+    }
+  }
+}
+
+// See also font-size in mixin typo-responsive

@@ -1,0 +1,17 @@
+// Error specific styling
+#error {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 12rem 0;
+
+	h1 {
+		font-size: 5.6rem;
+	}
+
+	p {
+		margin: 1rem 0;
+	}
+}

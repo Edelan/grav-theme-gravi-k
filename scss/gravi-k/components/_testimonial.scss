@@ -1,0 +1,36 @@
+.testimonial {
+  .testimonial-items {
+    .h4-like{
+      padding-left: 48px;}
+    p:last-child {
+      padding-left: 3em;
+    }
+  }
+  .slide {
+    li {
+      background-color: $gray-lighterplus2;
+    }
+  }
+  .fullText {
+    div {
+      background-color: $gray-lighterplus2;
+    }
+  }
+  .lSAction > a {
+    background-image: url('../../images/controls-gray-2.png');
+    top: 85%;
+  }
+}
+
+.bg-gray {
+  .slide {
+    li {
+      background-color: $white;
+    }
+  }
+  .fullText {
+    div {
+      background-color: $white;
+    }
+  }
+}

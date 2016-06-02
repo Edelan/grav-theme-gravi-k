@@ -1,0 +1,34 @@
+title: simple-text
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/simple-text
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/simple-text
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        custom:
+          type: tab
+          title: Custom
+          fields:
+            header.bgcolor:
+              type: toggle
+              label: Background color
+              highlight: 1
+              default: 1
+              options:
+                1: White
+                0: Gray
+              validate:
+                type: bool

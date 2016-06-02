@@ -1,0 +1,30 @@
+{% set head = page.header.heading %}
+
+{% if head.display %}
+
+<section id="heading">
+  <div class="heading-color {{bgcol_theme? '':'heading-gray'}}">
+    <div class="container grid-2 pvl">
+      <div class="heading-content left ml0">
+        <h1 class="mb0">
+        {% if head.other_title %}
+        
+         {{head.other_title}}
+         
+         {% else %}
+         
+         {{page.header.title}}
+         {% endif %}         
+        </h1>        
+      </div>
+      {% if config.plugins.breadcrumbs.enabled and head.bread %}
+      <div class="breadcrumbs tiny-hidden txtright">
+        {% include 'partials/breadcrumbs.html.twig' %}
+      </div>  
+      {% endif %}
+          
+      </div>    
+  </div>  
+</section>
+
+{% endif %}

@@ -1,0 +1,36 @@
+{% set comp = theme_config.contact %}
+<div class="company-details mbm">
+  <p class="h3-like mbs prs">
+  {% if comp.title_footer %}
+  {{comp.title_footer}}
+  {% else %}  
+  Contact details
+  {% endif %}
+  </p>
+  <div itemscope itemtype="http://schema.org/Organization">
+    {% if comp.name %}
+    <p class="name h4-like" itemprop="name">{{comp.name}}</p> {% endif %}
+
+<address>
+  <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="address">
+      {% if comp.adr %}
+      <span itemprop="streetAddress">{{comp.adr}}</span> {% endif %} {% if comp.zip %}
+      <span class="inbl prs" itemprop="postalCode">{{comp.zip}}</span> {% endif %} {% if comp.city %}
+      <span class="inbl prs" itemprop="addressLocality">{{comp.city}}</span> {% endif %} {% if comp.state %}
+      <span class="inbl prs" itemprop="addressRegion">{{comp.state}}</span> {% endif %} {% if comp.country %}
+      <span class="inbl" itemprop="addressCountry">{{comp.country}}</span> {% endif %}
+
+    </div>
+</address>
+    
+    <ul class="datacom">
+      {% if comp.phone %}
+      <li itemprop="telephone" class="prs"><i class="fa fa-phone fa-fw"></i>{{comp.phone}}</li> {% endif %} {% if comp.mob_phone %}
+      <li itemprop="telephone" class="prs"><i class="fa fa-tablet fa-fw"></i>{{comp.mob_phone}}</li> {% endif %}{% if comp.fax %}
+      <li itemprop="telephone" class="prs"><i class="fa fa-fax fa-fw"></i>{{comp.fax}}</li> {% endif %} {% if comp.email %}
+      <li itemprop="email"><i class="fa fa-envelope fa-fw"></i>{{comp.email|safe_email}}</li> {% endif %}
+    </ul>
+
+
+  </div>
+</div>

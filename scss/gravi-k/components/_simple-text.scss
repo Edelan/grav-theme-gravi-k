@@ -1,0 +1,47 @@
+// TEXT for simple-text.html
+
+.text-heading {
+  h1 {
+    
+  }
+  p:last-child {
+    padding-bottom: 4rem;
+  }
+  &.txtcenter {
+    h1{
+      padding-bottom: 4rem;
+    }
+    .resume {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;      
+      padding-bottom: 3rem;
+    }
+  }
+  
+}
+@media screen and (max-width: $screen-phone) {
+    .text-heading {
+      &.txtcenter {
+        text-align: left;
+        h1{
+      padding-bottom: 0;
+    }
+        .resume {
+          width: 100%;
+          text-align: left;
+          padding-top: 0;
+          padding-bottom: 0;
+          
+        }
+      }
+      &.txtcenter h1:after,
+      .txtcenter h2:after,
+      .txtcenter h3:after {
+        margin-left: 0;
+      }
+      .w80 {
+        width: 100%;
+      }
+    }
+  }

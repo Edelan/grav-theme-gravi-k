@@ -1,0 +1,40 @@
+// FAQS
+.accordion{
+  [class*="-like"]{
+    text-transform: uppercase;
+  }
+}
+.accordion-aside{
+  ul{
+    list-style: none;
+    padding-left: 8px;
+  }
+  li:before{
+    content: '\f383';
+    font-family: Ionicons;
+    padding-right: 4px;
+    color: $color-theme;
+  }
+}
+.accordion-panel{
+  
+}
+.accordion-items{  
+ 
+}
+
+.accordion-item__title{
+  cursor:pointer;
+  border: 1px solid $gray-lighterplus;  
+  outline: 0;
+  }
+.accordion-item__content{
+  border-top: 0 solid transparent;
+  border-left: 1px solid $gray-lighterplus;
+  border-right: 1px solid $gray-lighterplus;
+  border-bottom: 1px solid $gray-lighterplus;
+    
+  }
+.ui-icon{
+  color: $color-theme;
+}

@@ -1,0 +1,46 @@
+{% set text = page.header.text %}
+{% set cont = page.header.faqscontent %}
+{% set aside = page.header.aside %}
+{% set list =page.header.list %}
+
+
+<section id="faqs" class="accordion {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %}
+    {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+  <div class="container">  
+  
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+    
+  <div class="{{aside.show? 'grid-2-splus-1-tplus-1' : 'grid-3-1'}}">
+    
+  {% if aside.show %}
+    <div class="accordion-aside resume prl mbl">
+        {% if aside.title %}
+        <h3>{{aside.title}}</h3>
+        {% endif %} 
+        {{aside.content|markdown}}
+      </div>
+  {% endif %}      
+
+      <div class="accordion-panel">
+       {% if list.title %}
+        <h3>{{list.title}}</h3>
+        {% endif %}
+        <div id="accordion" class="accordion-items mbl">
+          {% for item in list.questions %}
+          <p class="accordion-item__title h5-like pas mts">{{item.subtitle}}</p>
+          <div class="accordion-item__content resume phs pvm mt0">{{item.content|markdown}}</div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% if page.header.posContent == 'after' %}
+    {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>
+

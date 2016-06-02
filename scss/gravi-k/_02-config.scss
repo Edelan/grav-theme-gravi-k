@@ -1,0 +1,234 @@
+// Basics
+html {
+  font-size: $html-font-size;
+  box-sizing: border-box;
+  line-height: 1.3;
+}
+
+body {
+  font-family: $font-basic-sans;
+  color: $gray;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  @include typoBodyPix();
+  //@include typoBodyRem();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+[class*="-like"] {
+  font-family: $font-basic-sans-title;
+  font-weight: 400;
+  //text-transform: uppercase;
+  color: $gray-dark;
+}
+
+// Heading decoration
+h1,
+h2,
+h3 {
+  display: block;
+}
+
+
+h1,
+h2,
+h3 {
+  &:after {
+    display: block;
+    content: "";
+    background: $color-theme;    
+    height: 2px;
+    margin-top: 13px;
+  }
+}
+h1{
+  &:after{
+    width: 80px;
+  }
+}
+h2{
+  &:after{
+    width: 60px;
+  }
+}
+h3{
+  &:after{
+    width: 40px;
+  }
+}
+
+.txtcenter {
+  & h1,
+  h2,
+  h3 {
+    display: inline-block;
+    &:after {
+      display: block;
+      content: "";
+      background: $color-theme;
+      width: 50%;
+      height: 2px;
+      margin-top: 13px;
+      margin-left: 25%;
+    }
+  }
+}
+
+.showcase,
+#heading {
+  & h1,
+  h2,
+  h3 {
+    &:after {
+      display: none;
+      content: "";
+      background: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-phone+1px) {
+  @include typoHeaderSize($header-base16-medium);
+}
+
+@media screen and (max-width: $screen-phone) {
+  @include typoHeaderSize($header-base16-small);
+}
+
+.wrap-site .menu {}
+
+.container {
+  @include container();
+  @include resp-container();
+  &:after{
+    content: "";
+   display: block; 
+   clear: both;
+  }
+}
+
+main {
+  margin-top: 63px;
+}
+
+section {
+  padding: $section-pad;
+  &.bg-gray {
+    background-color: $section-bg-gray;
+  }
+  &:after{
+    content: "";
+   display: block; 
+   clear: both;
+  }
+}
+
+a {
+  color: $color-theme;
+  transition: all ease 0.25s;
+  &:hover {
+    @if lightness($color-theme) < 50% {
+      color: lighten($color-theme, 20%);
+    }
+    @else {
+      color: darken($color-theme, 20%);
+    }
+  }
+}
+
+i,
+img {
+  transition: all ease 0.25s;
+}
+
+img.fl,
+img.fr {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+img.fl {
+  margin-right: 2rem;
+}
+
+img.fr {
+  margin-left: 2rem;
+}
+
+a:focus {
+  outline: none;
+}
+
+blockquote:before {
+  color: $color-theme;
+}
+
+.default {
+  padding: $section-pad;
+}
+
+
+
+// Custom style page markdown
+.page-custom,
+.resume,
+.default {
+  ul {
+    list-style: none;
+    padding-left: 16px;
+    line-height: 1.8;
+    li {
+      display: block;
+    }
+    li:before {
+      content: "\f3d1";
+      font-family: Ionicons;
+      padding-right: 8px;
+      color: $color-theme;
+    }
+  }
+  
+  blockquote {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 1.1em;
+    //padding-left: 3rem;
+    & > p {
+      font-size: 1.1em;
+      
+      &:before {
+        content: "\201C";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: georgia, serif;
+        font-size: 5em;
+        line-height: 0.9;
+        color: $color-theme;
+      }
+    }
+    &:before {
+      content: none;
+    }
+    & > blockquote {      
+    }
+    ol {}
+    a {}
+  }
+}
+
+// Custom lightslider
+.lSSlideOuter .lSPager.lSpg > li:hover a,
+.lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: $color-theme;
+}
+
+.lSSlideOuter .lSPager.lSpg > li a {
+  background-color: $gray-lighterplus;
+}

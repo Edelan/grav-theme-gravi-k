@@ -1,0 +1,29 @@
+<div class="js-tabs">
+  <ul class="js-tablist  tab-icon {{ tabs.title_align?'txtcenter':'txtleft'}}">
+    {% for item in tabs.list %}
+    <li class="js-tablist__item">
+      <a href="#{{item.icon}}" id="label_{{ item.icon }}" class="js-tablist__link">
+        <i class="fa fa-{{item.icon}}"></i>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% for item in tabs.list %}
+  <div id="{{item.icon}}" class="js-tabcontent">
+    <div class="tabs-content">
+     
+     {% if item.image %}
+     {% set img = page.media[item.image].cropResize(450,300).url %}
+     
+      
+     <img class="pbs {{item.position? 'fl': 'fr'}}" src="{{ img }}" alt="">
+     
+     {% endif %}
+      <div class="resume">
+        {{item.content|markdown}}
+      </div>
+     
+    </div>  
+  </div>
+  {% endfor %}
+</div>

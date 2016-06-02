@@ -1,0 +1,23 @@
+// CARDS
+.cards-items{
+  position: relative;
+  border: 1px solid $gray-lighterplus;
+  
+}
+.cards-items__title{
+  padding-left: 8px;
+}
+
+.cards-items__content{
+  padding-left: 8px;
+  padding-bottom: 56px;
+}
+.cards-items__link{
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  a{    
+    @include buttonBase();
+    @include buttonColorStyle();
+  }
+}

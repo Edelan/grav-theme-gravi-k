@@ -1,0 +1,45 @@
+{% set text = page.header.text %}
+{% set aside = page.header.form_aside %}
+{% set formu = page.header.form %}
+
+<section id="form" class="contact {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %} {% include 'partials/content-before.html.twig' %} {% endif %}
+  <div class="container">
+   
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+    
+    {% if aside.display %}
+      
+      <div class="grid-2-splus-1-tplus-1 pbl">
+        <div class="contact-aside page-custom {{aside.left_position? '' : 'flex-item-last'}} ">
+         <h2>{{aside.title}}</h2>
+          {{aside.content|markdown}}
+        </div>
+          
+        <div class="contact-form">
+        {% if formu.title_display %}
+          <h2>{{ page.header.title }}</h2>
+        {% endif %} 
+          {% include "forms/form.html.twig" %}
+        </div>
+
+      </div>
+
+    {% else %}
+      
+      <div class="contact-form pbl {{formu.form_position == 'l60'? 'w60':''}}{{formu.form_position == 'c60'? 'center w60':''}} {{formu.form_position == 'sub'? 'subscribe w80 txtcenter':''}}">
+      {% if formu.title_display %}
+          <h2>{{ page.header.title }}</h2>
+        {% endif %} 
+        {% include "forms/form.html.twig" %}
+      </div>
+      
+    {% endif %}     
+      
+    
+  </div>
+
+  {% if page.header.posContent == 'after' %} {% include 'partials/content-after.html.twig' %} {% endif %}
+</section>

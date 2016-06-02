@@ -1,0 +1,91 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set conf = theme_config.contact.gmap %}
+{% set gmap = page.header.gmap %}
+{% if gmap %}
+{% set lat = gmap.lat %}
+{% set lng = gmap.lng %}
+{% else %}
+{% set lat = conf.lat %}
+{% set lng = conf.lng %}
+{% endif %}
+
+ <section class="map {{ page.header.bgcolor? '': 'bg-gray'}} {{ gmap.vertical_spacing? '':'pa0'}}">
+  {% if page.header.posContent == 'before' %}
+  {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+  <div {{ gmap.wide? '' : 'class="container"'}}>
+     
+     <div id="map" class="map-display" style="width:100%; height:{{gmap.height?  gmap.height :'500'}}px;">        
+      </div>
+     
+          
+      
+  </div>  
+
+  {% if page.header.posContent == 'after' %}
+  {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>
+
+
+<script type="text/javascript">
+
+var map;
+
+
+function initMap() {
+  
+  var customMapType = new google.maps.StyledMapType([
+      
+     { featureType: "water",
+      elementType: "geometry", 
+      stylers: 
+      [ { color: "#8ccaf1" } ] },
+    { featureType: "poi", 
+     stylers: 
+     [ { visibility: "off" } ] },
+    { featureType: "transit",
+     stylers: 
+     [ { visibility: "off" } ] },
+    { featureType: "water",
+     elementType: "labels",
+     stylers: 
+     [ { color: "#ffffff" },
+      { visibility: "simplified" } ] }
+    ], {
+      name: 'Custom Style'
+  });
+  
+  var customMapTypeId = 'custom_style';
+  
+  var myLatLng = { lat: {{lat}}, lng: {{lng}} };
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: myLatLng,    
+    scrollwheel: {{gmap.scroll}},
+    zoom: {{gmap.zoom}},
+    streetViewControl: true,
+		mapTypeControl: false,
+  });
+  
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    icon: new google.maps.MarkerImage("{{theme_url}}/images/map_pointer.png", new google.maps.Size(38, 48), null, new google.maps.Point(18, 48)),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+    }
+  });
+  map.mapTypes.set(customMapTypeId, customMapType);
+  map.setMapTypeId(customMapTypeId);
+}
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{gmap.apikey}}&callback=initMap">
+</script>
+
+
+
+
+			
+

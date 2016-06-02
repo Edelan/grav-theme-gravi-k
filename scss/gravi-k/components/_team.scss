@@ -1,0 +1,44 @@
+.team {
+  .heading {}
+  .team-list {}
+  .team-items {
+    hr {
+      background-color: $gray-lighterplus;
+      margin: 1em 0;
+    }
+  }
+  .team-wrap {
+    border: 1px solid $gray-lighterplus;
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .team-items__img {
+    .rounded {
+      border-radius: 50%;
+    }
+  }
+  .team-items__name {}
+  .team-items__job {
+    text-transform: capitalize;
+    color: $gray-light;
+  }
+  .team-items__contact {
+    a {
+      display: inline-block;
+      text-align: center;
+      background-color: $gray-lighterplus;
+      margin: 0 1px 5px;
+      @include hoverBgColorSocialIconFa();
+      i {
+        font-size: 16px;
+        width: 30px;
+        line-height: 30px;
+        @include colorSocialIconFa();
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+}

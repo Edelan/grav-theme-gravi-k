@@ -1,0 +1,57 @@
+title: modular
+'@extends':
+    type: modular
+    context: blueprints://pages
+    
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        sect_header:
+          type: tab
+          title: Custom
+          fields:            
+            section1:
+              type: section
+              title: Create your header section
+              underline: true
+            info1:
+              type: display
+              label: info
+              content: 'The header section is placed under the navigation menu, not on homepage'
+            header.heading.display:
+              type: toggle
+              label: Display header section?
+              highlight: 1
+              default: 1
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+            header.heading.bread:
+              type: toggle
+              label: Display breadcrumbs in the header section?
+              highlight: 0
+              default: 0
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+            header.heading.bgcol_theme:
+              type: toggle
+              label: Choose your background
+              highlight: 1
+              default: 1
+              options:
+                1: Color theme
+                0: Gray
+              validate:
+                type: bool            
+            header.heading.other_title:
+              type: text
+              label: 'If you want an other title (optional)'
+              help: different of the content title

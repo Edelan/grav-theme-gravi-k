@@ -1,0 +1,107 @@
+title: Features
+'@extends': default
+form:
+  fields:
+    tabs:
+      fields:
+        advanced:
+          fields:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/features
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/features
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        custom:
+          type: tab
+          title: Custom
+          fields:
+            header.bgcolor:
+              type: toggle
+              label: Background color
+              highlight: 1
+              default: 1
+              options:
+                1: White
+                0: Gray
+              validate:
+                type: bool
+            header.posContent:
+              type: select
+              size: medium
+              label: Position of the  content
+              default: one
+              options:
+                one: Without content
+                before: Before ...
+                after: After ...
+            
+            
+            spacer0:
+              type: spacer
+              title: 'Add specific content'
+              underline: true
+              text: 'This content is placed above elements below'
+            header.text.heading_display:
+              type: toggle
+              label: Display title & text
+              highlight: 0
+              default: 0
+              options:
+                1: 'Yes'
+                0: 'No'
+              validate:
+                type: bool
+            header.text.title:
+              type: text
+              label: Title if different (optional)
+              help: If different from content title
+            header.text.resume:
+              type: textarea
+              label: Some text (optional)
+              help: Markdown possible
+            header.text.text_center:
+              type: toggle
+              label: Title & text position
+              highlight: 0
+              default: 0
+              options:
+                0: 'Left'
+                1: 'Center'
+              validate:
+                type: bool
+            
+            section1:
+              type: section
+              title: Create your features
+              underline: true
+              text: 'For the icon names please go to http://fontawesome.io/icons/'
+            header.feats.col:
+              type: select
+              label: Choose the number of columns on desktop              
+              default: 2
+              options:
+                2: 2
+                3: 3
+                4: 4              
+            header.feats.list:
+              type: list 
+              label: You can create 3 or more blocks
+              fields:
+                .icon:
+                  type: text
+                  label: Icon name
+                  placeholder: home
+                  help: 'For the icon names please go to http://fontawesome.io/icons/'
+                .subtitle:
+                  type: text
+                  label: Subtitle
+                .content:
+                  type: textarea
+                  label: Content

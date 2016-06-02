@@ -1,0 +1,109 @@
+{% set text = page.header.textillate %}
+{% set text_id = 'tx-' ~ random_string(10) %}
+
+{% set ls = page.header.ls %}
+{% set ls_id = 'ls-' ~ random_string(10) %}
+
+{% set but = page.header.button %}
+
+<section id="hero" class="showcase cover" style="background-image: url('{{ page.url }}/{{page.header.backImage }}');">
+<div class="veil">
+{% if page.header.choice == true %}
+ 
+  
+    <div class="container text-anime txtcenter">
+      <h1 class="{{text_id}}">
+      <span class="texts">
+        {% for text in page.header.text_anime %}
+        <span>{{text.title}}</span>
+        {% endfor %}
+      </span>
+      </h1>
+      {% if page.header.subTitle %}
+      <div class="showcase-subtitle h4-like">
+      {{page.header.subTitle|markdown}}</div>
+      {% endif %}
+    </div>
+      
+  {% else %}
+  
+    <div class="container text-slider txtcenter">
+      
+        <ul  id="{{ls_id}}" class="slider">
+         {% for item in page.header.text_slide %}
+          <li class="pbs">
+          <h1>{{item.slTitle}}</h1>
+          {% if item.slSubTitle %}
+          <div class="showcase-subtitle h4-like pbm">{{item.slSubTitle|markdown}}</div>
+          {% endif %}
+          
+          {% if item.slContent %}
+            <div class="showcase-content w70 center tiny-hidden small-hidden pbl">{{item.slContent|markdown}}</div>
+          {% endif %}
+            </li>           
+          {% endfor %}
+        </ul>
+      
+    </div>
+    
+    {% endif %}
+    
+    {% if page.header.button %}
+        
+    <div class="container txtcenter">
+        <a class="button pas mtl" href="{{base_url}}{{ but.url }}#{{but.target}}">{{ but.text }}</a>
+    </div>
+    {% endif %}
+  </div>  
+</section>
+
+{% if page.header.choice == true %}
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function() {     
+  $('.{{text_id}}').textillate({
+      
+      selector: '.texts',
+      loop: {{ text.loop }},
+      minDisplayTime: {{ text.dispTime }},
+      initialDelay: {{ text.initDelay }},
+      autoStart: true,
+      in: {
+        effect: '{{ text.textTypeIn }}',
+        {{ text.textModeIn }}: true,
+        
+    },
+      out: {
+        effect: '{{ text.textTypeOut }}',
+        {{ text.textModeOut }}: true,                                
+    }
+    
+    });  
+});
+</script>
+
+{% else %}
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#{{ ls_id }}").lightSlider({
+        item: {{ ls.item|default(1) }},
+        slideMove: {{ ls.slideMove|default(1) }},
+        mode: 'slide',
+        cssEasing: '{{ ls.cssEasing|default('ease') }}',
+        easing: '{{ ls.easing|default('') }}',
+        speed: {{ ls.speed|default(1000) }},
+        auto: {{ ls.auto|default('false') }},
+        loop: {{ ls.loop|default('false') }},
+        pause: {{ ls.pause|default(5000) }},
+        pauseOnHover: {{ ls.pauseOnHover|default('false') }},        
+        pager: {{ ls.pager|default('true') }}        
+
+    });
+  });
+</script>
+
+{% endif %}

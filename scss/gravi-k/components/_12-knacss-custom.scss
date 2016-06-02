@@ -1,0 +1,97 @@
+// "tiny-1" = 1 column when tiny screen
+// example : .grid-4-small-2-tiny-1 will be 4 then 2 columns then 1 column
+
+// Reporté dans grid pour des raisons d'ordre priorités de @media
+
+@media (max-width: $screen-desktop-plus) {
+  [class*="-mplus-2"] > * {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-mplus-2"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-mplus-1"] > * {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-mplus-1"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+}
+
+@media (max-width: $screen-tablet) {
+  [class*="-splus-2"] > * {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-splus-2"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-splus-1"] > * {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-splus-1"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+}
+
+@media (max-width: $screen-phone) {
+  [class*="-tplus-2"] > * {
+    width: calc(100% * 1 / 2 - #{$gutter} - .01px);
+  }
+  [class*="-tplus-2"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-tplus-1"] > * {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+  [class*="-tplus-1"] > .flex-item-double {
+    width: calc(100% - #{$gutter} - .01px);
+  }
+}
+.phs{
+  padding-left: $small-value;
+  padding-right: $small-value;
+}
+.pvs{
+  padding-top: $small-value;
+  padding-bottom: $small-value;
+}
+.phm{
+  padding-left: $medium-value;
+  padding-right: $medium-value;
+}
+.pvm{
+  padding-top: $medium-value;
+  padding-bottom: $medium-value;
+}
+.phl{
+  padding-left: $large-value;
+  padding-right: $large-value;
+}
+.pvl{
+  padding-top: $large-value;
+  padding-bottom: $large-value;
+}
+.mhs{
+  margin-left: $small-value;
+  margin-right: $small-value;
+}
+.mvs{
+  margin-top: $small-value;
+  margin-bottom: $small-value;
+}
+.mhm{
+  margin-left: $medium-value;
+  margin-right: $medium-value;
+}
+.mvm{
+  margin-top: $medium-value;
+  margin-bottom: $medium-value;
+}
+.mhl{
+  margin-left: $large-value;
+  margin-right: $large-value;
+}
+.mvl{
+  margin-top: $large-value;
+  margin-bottom: $large-value;
+}

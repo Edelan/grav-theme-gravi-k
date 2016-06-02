@@ -1,0 +1,149 @@
+footer {
+  @include typoFooterPix();
+  background-color: $gray-dark;
+  color: $gray-lighterplus1;
+  padding: 56px 0 16px 0;
+  [class*="-like"] {
+    color: $gray-lighterplus1;
+  }
+  .h3-like {
+    display: inline-block;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-theme;
+    font-size: 1.47em;
+    
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+  [class*="grid-"] .company-about img {
+    
+    padding-top: 1em;
+    max-height: 54px;
+    width: auto;
+  }
+  .company-about {
+    
+    li {
+      
+    }
+    a {
+      display: inline-block;
+      margin: 2px;
+      background-color: $gray-lighterplus;
+      @include hoverBgColorSocialIconFa();
+      i {
+        @include colorSocialIconFa();
+        width: 32px;
+        font-size: 1.4em;
+        line-height: 32px;
+        margin: 0;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+    .resume{
+      width: 80%;      
+    }
+    @media screen and (max-width: $screen-phone){
+      .resume{
+      width: 100%;      
+    }
+    }
+  }
+  .company-logo {
+    img {
+      max-height: 54px;
+      width: auto;
+    }
+    span {
+      line-height: 40px;
+      font-size: 28px;
+      font-family: 'Montserrat';
+      font-weight: 700;
+      color: $color-theme;
+    }
+  }
+  .company-details {
+    .name {
+      text-transform: uppercase;
+      font-size: 1.2em;
+      padding-top: .5em;
+    }
+    .address{
+      font-style: normal;
+      margin-top: 0.5rem;
+      span:first-child{
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+    }
+    .datacom {
+      li {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+      }
+      i {
+        width: 2em;
+      }
+    }
+  }
+  .company-openday {
+    table {
+      margin-bottom: 0;
+    }
+    table,
+    tr,
+    td {
+      border: none;
+      width: auto;
+    }
+    td {
+      padding-left: 0;
+      @media screen and (min-width:200px) {
+        display: table-cell;
+      }
+    }
+  }
+  .company-social {
+    li {
+      display: inline-block;
+    }
+    a {
+      display: inline-block;
+      background-color: $gray-dark1;
+      @include hoverBgColorSocialIconFa();
+      i {
+        color: $white;
+        width: 32px;
+        font-size: 1.5em;
+        line-height: 32px;
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+  .company-infos {
+    ul {
+      margin: 0;
+    }
+    li {
+      display: inline-block;
+      a {
+        @include buttonBase();
+        background-color: $gray-dark1;
+        padding: 0.5em 0.7em;
+        margin-bottom: 3px;
+        color: $white;
+        font-size: 0.8em;
+        &:hover {
+          color: $color-theme;
+        }
+      }
+    }
+  }
+  .copyright {}
+}

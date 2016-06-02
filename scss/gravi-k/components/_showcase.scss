@@ -1,0 +1,88 @@
+.showcase {
+  background-color: $color-theme;
+  background-size: cover;
+  margin-top: $menu-min-height - 4px;  
+  position: relative;
+  width: 100%;  
+  &.cover {}
+  .showcase-subtitle{
+    color: $gray-lighterplus;
+    text-transform: inherit;
+  }
+  .showcase-content{
+    color: $gray-lighter1;
+  }
+}
+.text-anime{
+  h1{
+    
+  }
+  
+  
+}
+
+.text-slider {  
+  position: relative;
+  h1{
+    
+  }
+  
+}
+
+@media screen and (max-width: $screen-phone){
+  .text-anime,
+  .text-slider{
+    h1{
+      font-size: 1.5em;
+    }
+    .showcase-subtitle{
+      font-size: 1em;
+      text-transform: inherit;
+    }
+  }
+  .veil{
+    .lSAction{
+      //position: relative;
+      height: 32px;
+    }
+    .lSAction > a {
+    top: 90%;
+    }
+  }
+  
+}
+
+.veil {  
+  padding: 80px 0;
+  background-color: transparent;
+  background-color: transparentize($black, 0.45);
+  ;
+  h1 {
+    color: $white;
+    //text-transform: uppercase;
+    font-weight: 300;
+    word-spacing: 1rem;        
+  }
+  [class*="-like"]{
+    font-weight: 400;
+  }
+  .button{
+    background-color: transparentize($white, 0.9);
+    border: 1px solid $gray-lighter2;
+    color: $white;    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    &:hover{
+      background-color: transparentize($color-theme, 0.9);
+    }
+  }
+  a {
+      color: $white;
+      &:hover {
+        color: lighten($color-theme, 15%);      
+      }
+    }
+  
+}

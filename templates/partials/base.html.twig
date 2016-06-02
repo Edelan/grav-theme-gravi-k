@@ -1,0 +1,72 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: theme_config.default_lang }}">
+
+<head>
+
+  {% block head %}
+  
+  <meta charset="utf-8" />
+  <title>{% if header.title %}{{ header.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+  {% include 'partials/metadata.html.twig' %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png', true) }}" />
+  <link rel="canonical" href="{{ page.url(true, true) }}" /> 
+  {% include 'partials/head.html.twig' %} 
+  
+  {% endblock head%}
+    
+</head>
+
+<body id="top">
+
+  <div id="ws" class="wrap-site">
+   
+  
+    
+  {# block nav #}
+       
+    {% include 'partials/menu.html.twig' %}
+  
+  {# endblock nav #}
+   
+  {# block main #}
+    
+    <main id="main" role="main">
+     
+      <div class="page-content {{page.header.body_classes}}">
+        {% if not page.home() %}
+          {% include 'partials/heading.html.twig' %}
+        {% endif %}         
+        
+        {% block content %} {% endblock %}
+        
+      </div>
+
+    </main>
+    
+  {# endblock main #}
+    
+        
+  {# block footer #}
+    
+    {% if page.template == 'error' %}
+    
+    {% else %}
+    
+    <footer id="footer">
+      {% include 'partials/footer.html.twig' %}
+      {% block bottom %}
+        {{ assets.js('bottom') }}
+      {% endblock %}
+    </footer>
+    {% endif %}
+    
+  {# endblock footer #}
+  </div>
+  {% include 'partials/theme-style.html.twig' %}
+</body>
+
+</html>

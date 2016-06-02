@@ -1,0 +1,295 @@
+@each $color-name,
+$color-num in $color-test {
+  .wrap-site-#{$color-name} {
+    // CONFIG
+    h1,
+    h2,
+    h3 {
+      &:after {
+        background: $color-num;
+      }
+    }
+    .txtcenter {
+      & h1,
+      h2,
+      h3 {
+        &:after {
+          background: $color-num;
+        }
+      }
+    }
+    a {
+      color: $color-num;
+      &:hover {
+        @if lightness($color-num) < 50% {
+          color: lighten($color-num, 20%);
+        }
+        @else {
+          color: darken($color-num, 20%);
+        }
+      }
+    }
+    blockquote:before {
+      color: $color-num;
+    }
+    .page-custom, .resume, .default {
+      li:before {
+        color: $color-num;
+      }
+      blockquote{
+        & > p{
+          &:before{
+            color: $color-num;
+          }
+        }
+      }
+    }
+    // Custom lightslider
+    .lSSlideOuter .lSPager.lSpg > li:hover a,
+    .lSSlideOuter .lSPager.lSpg > li.active a {
+      background-color: $color-num;
+    }
+    // BLOCK NAV
+    .menu {
+      .menu-logo {
+        a {
+          span {
+            color: $color-num;
+          }
+        }
+      }
+    }
+    .nav-links {
+      li {
+        &.active > a {
+          color: $color-num;
+        }
+      }
+      a {
+        color: $gray-light1;
+        &:hover {
+          color: $color-num;
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .menu-toggle {
+        color: $color-num;
+      }
+    }
+    .menu-logo {
+      a {
+        span {
+          color: $color-num;
+        }
+      }
+    }
+    .nav-submenu {
+      border-top: 1px solid $color-num;
+    }
+    .menu.mini {
+      a {
+        span {
+          color: $color-num;
+        }
+      }
+    }
+    // CARDS PANEL
+    .cards-items__link {
+      a {
+        background-color: $color-num;
+        color: $white;
+        &:hover,
+        &:focus {
+          background-color: scale-color($color-num, $lightness: -20%);
+        }
+      }
+    }
+    // FAQS
+    .accordion-aside {
+      li:before {
+        color: $color-num;
+      }
+    }
+    .ui-icon {
+      color: $color-num;
+    }
+    // FEATURES
+    .features-item__icon {
+      color: $color-num;
+    }
+    .features-item__title {
+      color: $color-num;
+    }
+    // FOOTER
+    footer {
+      .h3-like {
+        border-bottom: 2px solid $color-num;
+      }
+      .company-social {}
+      .company-logo {
+        span {
+          color: $color-num;
+        }
+      }
+      .company-infos {
+        li {
+          a {
+            &:hover {
+              color: $color-num;
+            }
+          }
+        }
+      }
+    }
+    // FORMS
+    input:not([type]),
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    input[type=url],
+    input[type=time],
+    input[type=date],
+    input[type=datetime],
+    input[type=datetime-local],
+    input[type=tel],
+    input[type=number],
+    input[type=search],
+    textarea {
+      // General Styles  
+      border-left-color: $color-num;
+      &:focus {
+        border-bottom-color: $color-num;
+        border-left-color: transparent;
+      }
+    }
+    select {
+      border-color: $color-num;
+    }
+    .required {
+      color: $color-num;
+    }
+    .ui-datepicker-calendar {
+      th,
+      td {
+        border-color: $color-num;
+      }
+    }
+    .ui-datepicker-today {
+      background-color: $color-num !important;
+    }
+    button {
+      border-color: $color-num;
+      background-color: $color-num;
+      &:hover {
+        background-color: scale-color($color-num, $lightness: -20%);
+      }
+    }
+    .subscribe {
+      input,
+      button {
+        border-color: $color-num;
+      }
+      input{
+        &:focus{      
+      border-left-color: $color-num;
+    }
+      }
+      button {
+        background-color: $color-num;
+        &:hover {
+          background-color: scale-color($color-num, $lightness: -20%);
+        }
+      }
+    }
+    
+    .thankyou{
+  i{
+    color: $color-num;
+  }
+}
+    // PAGE HEADING
+    .heading-color {
+      background-color: $color-num;
+    }
+    .shade {
+      background-color: rgba($color-num, 0.5);
+    }
+    // SHOWCASE
+    .showcase {
+      background-color: $color-num;
+      a {
+      color: $white;
+      &:hover {
+        color: lighten($color-num, 15%);       
+        
+      }
+    }
+    }
+    .veil {
+      .button {
+        &:hover {
+          background-color: transparentize($color-num, 0.9);
+        }
+      }
+    }
+    // TABS PANEL
+    .js-tablist__link {
+      color: $color-num;
+      &[aria-selected="true"] {
+        border: 1px solid $color-num;
+        background-color: $color-num;
+        color: $white;
+        &:hover {
+          background-color: $color-num;
+          color: $white;
+        }
+      }
+      &:hover {
+        color: $color-num;
+      }
+    }
+    .tab-icon {
+      .js-tablist__item {
+        a[aria-selected="true"]:after {
+          border-top: 13px solid $color-num;
+        }
+      }
+    }
+    .js-tabcontent {
+      .tabs-content {
+        ul {
+          li:before {
+            color: $color-num;
+          }
+        }
+      }
+    }
+    // TEAM
+    .team {
+      .team-items__contact {
+        a {
+          &:hover .fa-envelope {
+            background-color: $color-num;
+          }
+          i {
+            &.fa-envelope {
+              color: $color-num;
+            }
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    // WIDGET SERVICES
+    .widget-services {
+      .ws-items__links {
+        .active {
+          background-color: $color-num;
+        }
+      }
+    }
+  }
+}

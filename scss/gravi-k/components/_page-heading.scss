@@ -1,0 +1,41 @@
+section#heading{
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: -63px;
+}
+
+.heading-color, .heading-image{  
+  padding-top: 63px;
+  h1, i {
+    color:$white;
+  }
+  
+  span{
+    font-weight: 300;
+    line-height: 40px;
+  }
+  
+}
+.heading-color{
+  background-color: $color-theme;
+}
+
+
+.heading-content{
+  display: inline-block;
+}
+
+// breadcrumbs
+
+.breadcrumbs{
+  display: inline-block;  
+  a {
+    color: $white;
+    text-decoration: none;
+    @include a-pseudo($white);
+    > span{
+      @include a-pseudo($white);
+    }
+    
+  }
+}

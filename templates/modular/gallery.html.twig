@@ -1,0 +1,45 @@
+{% set text = page.header.text %}
+{% set gal = page.header.gallery %}
+ <section class="gallery {{ page.header.bgcolor? '': 'bg-gray'}}">
+  {% if page.header.posContent == 'before' %}
+  {% include 'partials/content-before.html.twig' %}
+  {% endif %}
+  <div class="container">
+   
+    {% if text.heading_display %}
+      {% include 'partials/text-heading.html.twig' %}
+    {% endif %}
+   
+    <div class="gallery-items {{ text.text_center? 'center':''}}" >
+    
+    {% if not gal.resize %}
+      {% for item in page.media.images %}
+                 
+        <div class="inbl mhs mbs">
+          {{item.lightbox().html }}          
+        </div> 
+                  
+      {% endfor %}
+    {% elseif gal.resize_type %}
+      {% for item in page.media.images %}            
+        <div class="inbl mhs mbs">
+          {{item.lightbox().resize(gal.resize_width,gal.resize_height).html }}
+          
+        </div>           
+      {% endfor %}
+    {% else %}
+      {% for item in page.media.images %}            
+        <div class="inbl mhs mbs">
+          {{item.lightbox().cropResize(gal.resize_width,gal.resize_height).html }}
+          
+        </div>           
+      {% endfor %}
+    {% endif %}
+     
+      
+    </div>
+  </div>
+  {% if page.header.posContent == 'after' %}
+  {% include 'partials/content-after.html.twig' %}
+  {% endif %}
+</section>
