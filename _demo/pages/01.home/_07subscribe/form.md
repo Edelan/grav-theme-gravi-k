@@ -7,7 +7,7 @@ text:
     title: 'Sign up for our weekly newsletter'
     resume: "We are working to make things better. Want to keep up to date with all our news and information? \r\n\r\nEnter your email to add into our mailing list. We hate spaming."
     text_center: true
-form:
+form_content:
     title_display: false
     form_position: sub
 form_aside:

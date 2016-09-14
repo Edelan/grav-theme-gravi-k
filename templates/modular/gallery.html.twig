@@ -16,21 +16,26 @@
       {% for item in page.media.images %}
                  
         <div class="inbl mhs mbs">
-          {{item.lightbox().html }}          
+          <a href="{{item.url}}" data-featherlight="image">
+          {{item.html }}      
         </div> 
                   
       {% endfor %}
     {% elseif gal.resize_type %}
       {% for item in page.media.images %}            
         <div class="inbl mhs mbs">
-          {{item.lightbox().resize(gal.resize_width,gal.resize_height).html }}
+          <a href="{{item.url}}" data-featherlight="image">
+          {{item.resize(gal.resize_width, gal.resize_height).html }}
+          </a>
           
         </div>           
       {% endfor %}
     {% else %}
       {% for item in page.media.images %}            
         <div class="inbl mhs mbs">
-          {{item.lightbox().cropResize(gal.resize_width,gal.resize_height).html }}
+          <a href="{{item.url}}" data-featherlight="image">
+            {{item.cropResize(gal.resize_width, gal.resize_height).html }}
+          </a>
           
         </div>           
       {% endfor %}

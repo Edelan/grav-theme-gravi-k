@@ -90,7 +90,7 @@ form:
               type: spacer
               title: Form
               underline: true
-            header.form.title_display:
+            header.form_content.title_display:
               type: toggle
               label: Display form title
               help: Content title
@@ -101,7 +101,7 @@ form:
                 0: 'No'
               validate:
                 type: bool
-            header.form.form_position:
+            header.form_content.form_position:
               type: select
               size: medium
               label: 'If there are only the form, choose the position and width.'

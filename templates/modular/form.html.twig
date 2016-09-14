@@ -1,6 +1,6 @@
 {% set text = page.header.text %}
 {% set aside = page.header.form_aside %}
-{% set formu = page.header.form %}
+{% set form_content = page.header.form_content %}
 
 <section id="form" class="contact {{ page.header.bgcolor? '': 'bg-gray'}}">
   {% if page.header.posContent == 'before' %} {% include 'partials/content-before.html.twig' %} {% endif %}
@@ -19,7 +19,7 @@
         </div>
           
         <div class="contact-form">
-        {% if formu.title_display %}
+        {% if form_content.title_display %}
           <h2>{{ page.header.title }}</h2>
         {% endif %} 
           {% include "forms/form.html.twig" %}
@@ -29,8 +29,8 @@
 
     {% else %}
       
-      <div class="contact-form pbl {{formu.form_position == 'l60'? 'w60':''}}{{formu.form_position == 'c60'? 'center w60':''}} {{formu.form_position == 'sub'? 'subscribe w80 txtcenter':''}}">
-      {% if formu.title_display %}
+      <div class="contact-form pbl {{form_content.form_position == 'l60'? 'w60':''}}{{form_content.form_position == 'c60'? 'center w60':''}} {{form_content.form_position == 'sub'? 'subscribe w80 txtcenter':''}}">
+      {% if form_content.title_display %}
           <h2>{{ page.header.title }}</h2>
         {% endif %} 
         {% include "forms/form.html.twig" %}
