@@ -2,14 +2,14 @@
 
 ![Gravi-k](assets/screenshot-gravi-k.jpg)
 
-[Demo](http://www.demo.adweb-services.com/gravi-k/)
+[Demo](http://demo.edelanoy.com/gravi-k/)
 
 **Gravi-K** is a [Grav](http://getgrav.org) theme based on [Knascss](http://knacss.com/)
 This is a base theme for starting your site, but also meant to be customized.
 
 # Installation
 
-Installing the Gravi-K theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file. 
+Installing the Gravi-K theme can be done in one of two ways. Our GPM (Grav Package Manager) installation method enables you to quickly and easily install the theme with a simple terminal command, while the manual method enables you to do so via a zip file.
 
 The theme by itself is useful but require the admin plugin
 
@@ -78,7 +78,7 @@ Manually updating Gravi-k is pretty simple. Here is what you will need to do to 
   * Gallery Modular view template
   * Team Modular view template
 
-* Blog view template (soon)
+* Blog view template (For the next major release).
 
 ### Menu Features
 
@@ -92,6 +92,11 @@ dropdown:
 ```
 
 This will ensure that sub-pages show up as sub-menus in the navigation.
+
+## Required plugins
+
+* [Featherlight](https://github.com/getgrav/grav-plugin-featherlight)
+* [Lightslider](https://github.com/getgrav/grav-plugin-lightslider)
 
 ## Demo Contents
 
@@ -108,4 +113,3 @@ If you want to set Gravi-k as the default theme, you can do so by following thes
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
 
 Once this is done, you should be able to see the new theme on the frontend. Keep in mind any customizations made to the previous theme will not be reflected as all of the theme and templating information is now being pulled from the **gravi-k** folder.
- 
