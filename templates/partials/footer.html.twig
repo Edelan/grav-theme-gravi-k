@@ -10,29 +10,29 @@
 
  <div class="container">
   <div class="grid-{{ count  }}-mplus-2-tplus-1">
-  {% if theme_config.display.about %}  
+  {% if theme_config.display.about %}
     {% include 'partials/company-about.html.twig' %}
-  {% endif %}  
-  {% if theme_config.display.contact %}   
-    {% include 'partials/company-details.html.twig' %}
-  {% endif %}   
-  {% if theme_config.display.openday %} 
-    {% include 'partials/company-openday.html.twig' %} 
   {% endif %}
-    
+  {% if theme_config.display.contact %}
+    {% include 'partials/company-details.html.twig' %}
+  {% endif %}
+  {% if theme_config.display.openday %}
+    {% include 'partials/company-openday.html.twig' %}
+  {% endif %}
+
     <div>
     {% if theme_config.social.display%}
     {% include 'partials/company-social.html.twig' %}
     {% endif %}
-    {% if theme_config.infos.display %}    
+    {% if theme_config.infos.display %}
     {% include 'partials/company-infos.html.twig' %}
     {% endif %}
-    </div> 
-    
+    </div>
+
   </div>
-  
+
   <div class="copyright small txtcenter">
-  <span>&#169; 2016 {{theme_config.contact.name}} | All Rights Reserved</span>
+  <span>&#169; {{ 'now'|date('Y') }} {{theme_config.contact.name}} | All Rights Reserved</span>
 </div>
 </div>
 
