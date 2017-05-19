@@ -4,22 +4,10 @@ description: "Multipurpose site"
 icon: wrench
 author:
   name: Eric De Lanoy
-<<<<<<< HEAD
   email: contact@edelanoy.com
   url: http://edelanoy.com
 homepage:
 demo: http://demo.edelanoy.com/gravi-k/
-=======
-  email: e.delanoy@adweb-services
-  url: www.adweb-services.com
-homepage: 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> master
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 keywords: Gravi-K, theme, customization, modern, fast, responsive, html5, css3, framework Knacss,
 bugs:
 license: MIT
