@@ -1,20 +1,33 @@
 name: Gravi-k
-version: 0.0.1
+version: 1.1.0
 description: "Multipurpose site"
 icon: wrench
 author:
   name: Eric De Lanoy
+<<<<<<< HEAD
+  email: contact@edelanoy.com
+  url: http://edelanoy.com
+homepage:
+demo: http://demo.edelanoy.com/gravi-k/
+=======
   email: e.delanoy@adweb-services
   url: www.adweb-services.com
 homepage: 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 keywords: Gravi-K, theme, customization, modern, fast, responsive, html5, css3, framework Knacss,
-bugs: 
+bugs:
 license: MIT
 
 form:
   validation: loose
   fields:
-    
+
     general:
       type: section
       title: General settings
@@ -34,16 +47,41 @@ form:
           type: display
           label: Note for setting language
           markdown: true
-          content: 'For multi-language see https://learn.getgrav.org/content/multi-language#multi-language-basics' 
+          content: 'For multi-language see https://learn.getgrav.org/content/multi-language#multi-language-basics'
         default_lang:
           type: text
           label: ISO Language Code for your site
           size: x-small
           help: 'See http://www.w3schools.com/tags/ref_language_codes.asp'
 
+        color_picker_theme:
+          type: toggle
+          label: display theme color picker
+          highlight: 0
+          default: 0
+          options:
+            0: Disabled
+            1: Enabled
+          validate:
+            type: bool
+
+        color_theme:
+          type: select
+          label: Options theme color
+          size: small
+          options:
+            default: blue default
+            orange: orange
+            purple: purple
+            indigo: indigo
+            green: green
+            brown: brown
+            yellow: yellow
+            red: red
+
     head:
       type: section
-      title: Navbar settings      
+      title: Navbar settings
       underline: true
       fields:
         display1:
@@ -67,7 +105,7 @@ form:
           fields:
             column11:
               type: column
-              fields:              
+              fields:
                 contact.name:
                   type: text
                   label: Contact name
@@ -113,13 +151,13 @@ form:
                   type: text
                   label: Latitude
                   size: medium
-                  help: 'decimal degrees (e.g: 40.7127837)'                  
+                  help: 'decimal degrees (e.g: 40.7127837)'
                 contact.gmap.lng:
                   type: text
                   label: Longitude
                   size: medium
                   help: 'decimal degrees (e.g: -74.00594130000002)'
-                  
+
 
     social:
       type: section
@@ -138,7 +176,7 @@ form:
             .name:
               type: select
               label: Select a name
-              options:                
+              options:
                 facebook: Facebook
                 google-plus: Google+
                 twitter: Twitter
@@ -146,29 +184,29 @@ form:
                 envelope: Email
                 linkedin: LinkedIn
                 slideshare: Slideshare
-                youtube: Youtube              
+                youtube: Youtube
                 vimeo: Vimeo
                 instagram: Instagram
                 flickr: Flickr
                 pinterest: Pinterest
-                tumblr: Tumblr                
+                tumblr: Tumblr
             .url:
               type: text
               label: URL
-              placeholder: http:// or email    
+              placeholder: http:// or email
 
     section:
       type: section
       title: Footer settings
-      text: The footer contains at least 3 sections -- About -- Company details -- Social links --   You can add 1 more if you want. 
+      text: The footer contains at least 3 sections -- About -- Company details -- Social links --   You can add 1 more if you want.
       underline: true
-      fields:       
-      
-        
+      fields:
+
+
         spacer1:
           type: spacer
           title: Section About
-        
+
         display.about:
           type: toggle
           label: Display about
@@ -176,7 +214,7 @@ form:
           default: 0
           options:
             1: 'Yes'
-            0: 'No'                    
+            0: 'No'
           validate:
             type: bool
         about.title:
@@ -194,7 +232,7 @@ form:
         spacer2:
           type: spacer
           title: Section Company details
-        
+
         display.contact:
           type: toggle
           label: Display Contact details
@@ -202,17 +240,17 @@ form:
           default: 0
           options:
             1: 'Yes'
-            0: 'No'                    
+            0: 'No'
           validate:
             type: bool
         contact.title_footer:
           type: text
           label: Title (default: Company details)
-                    
+
         spacer3:
           type: spacer
           title: Section Working hours
-        
+
         display.openday:
           type: toggle
           label: Display workinghours
@@ -220,7 +258,7 @@ form:
           default: 0
           options:
             1: 'Yes'
-            0: 'No'                    
+            0: 'No'
           validate:
             type: bool
         openday.title:
@@ -230,18 +268,18 @@ form:
           type: textarea
           label: Some text before the workinghours (optional)
           help: Markdown language possible
-          placeholder: 'We work 7 days a week, .... Contact us for any info.' 
+          placeholder: 'We work 7 days a week, .... Contact us for any info.'
         openday.resume:
           type: array
           label: Working hours settings
-          help: 
+          help:
           placeholder_key: 'e.g: monday'
           placeholder_value: '07:00-13:00 14:00-19:00'
-          
+
         spacer4:
           type: spacer
           title: Section Social link
-        
+
         social.display:
           type: toggle
           label: Display Social links
@@ -249,13 +287,13 @@ form:
           default: 0
           options:
             1: 'Yes'
-            0: 'No'                    
+            0: 'No'
           validate:
             type: bool
         social.title:
           type: text
           label: Title (default: Social links)
-        
+
         spacer5:
           type: spacer
           title: Section pages links informations
@@ -266,7 +304,7 @@ form:
           default: 0
           options:
             1: 'Yes'
-            0: 'No'                    
+            0: 'No'
           validate:
             type: bool
         infos.title:
