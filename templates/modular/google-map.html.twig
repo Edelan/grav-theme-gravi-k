@@ -1,12 +1,12 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set conf = theme_config.contact.gmap %}
 {% set gmap = page.header.gmap %}
-{% if gmap %}
-{% set lat = gmap.lat %}
-{% set lng = gmap.lng %}
+{% if gmap.lat is not empty %}
+  {% set lat = gmap.lat %}
+  {% set lng = gmap.lng %}
 {% else %}
-{% set lat = conf.lat %}
-{% set lng = conf.lng %}
+  {% set lat = conf.lat %}
+  {% set lng = conf.lng %}
 {% endif %}
 
  <section class="map {{ page.header.bgcolor? '': 'bg-gray'}} {{ gmap.vertical_spacing? '':'pa0'}}">
@@ -14,13 +14,13 @@
   {% include 'partials/content-before.html.twig' %}
   {% endif %}
   <div {{ gmap.wide? '' : 'class="container"'}}>
-     
-     <div id="map" class="map-display" style="width:100%; height:{{gmap.height?  gmap.height :'500'}}px;">        
+
+     <div id="map" class="map-display" style="width:100%; height:{{gmap.height?  gmap.height :'500'}}px;">
       </div>
-     
-          
-      
-  </div>  
+
+
+
+  </div>
 
   {% if page.header.posContent == 'after' %}
   {% include 'partials/content-after.html.twig' %}
@@ -34,40 +34,40 @@ var map;
 
 
 function initMap() {
-  
+
   var customMapType = new google.maps.StyledMapType([
-      
+
      { featureType: "water",
-      elementType: "geometry", 
-      stylers: 
+      elementType: "geometry",
+      stylers:
       [ { color: "#8ccaf1" } ] },
-    { featureType: "poi", 
-     stylers: 
+    { featureType: "poi",
+     stylers:
      [ { visibility: "off" } ] },
     { featureType: "transit",
-     stylers: 
+     stylers:
      [ { visibility: "off" } ] },
     { featureType: "water",
      elementType: "labels",
-     stylers: 
+     stylers:
      [ { color: "#ffffff" },
       { visibility: "simplified" } ] }
     ], {
       name: 'Custom Style'
   });
-  
+
   var customMapTypeId = 'custom_style';
-  
+
   var myLatLng = { lat: {{lat}}, lng: {{lng}} };
-  
+
   var map = new google.maps.Map(document.getElementById('map'), {
-    center: myLatLng,    
+    center: myLatLng,
     scrollwheel: {{gmap.scroll}},
     zoom: {{gmap.zoom}},
     streetViewControl: true,
 		mapTypeControl: false,
   });
-  
+
   var marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
@@ -83,9 +83,3 @@ function initMap() {
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key={{gmap.apikey}}&callback=initMap">
 </script>
-
-
-
-
-			
-
