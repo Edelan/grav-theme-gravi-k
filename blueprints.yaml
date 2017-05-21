@@ -145,6 +145,11 @@ form:
                   label: Longitude
                   size: medium
                   help: 'decimal degrees (e.g: -74.00594130000002)'
+                contact.gmap.apikey:
+                  type: text
+                  label: Google Maps API Key (recommended)
+                  size: medium
+                  description: "The map works without Api Key but it is recommended to ask for a key: https://developers.google.com/maps/"
 
 
     social:
