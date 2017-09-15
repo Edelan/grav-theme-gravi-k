@@ -1,12 +1,12 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 {% set conf = theme_config.contact.gmap %}
 {% set gmap = page.header.gmap %}
-{% if gmap %}
-{% set lat = gmap.lat %}
-{% set lng = gmap.lng %}
+{% if gmap.lat is not empty %}
+  {% set lat = gmap.lat %}
+  {% set lng = gmap.lng %}
 {% else %}
-{% set lat = conf.lat %}
-{% set lng = conf.lng %}
+  {% set lat = conf.lat %}
+  {% set lng = conf.lng %}
 {% endif %}
 {% if gmap.apikey is not empty %}
   {% set apikey = gmap.apikey %}
